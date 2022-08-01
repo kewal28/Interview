@@ -3,13 +3,7 @@ public class CheckPrime {
     public static void main(String[] args) {
         int[] nums = {42, 67, 82, 33, 25, 32, 66, 26, 64, 69};
         int[] res = checkPrime(nums);
-        for(int i=0; i<res.length; i++) {
-            if(i == res.length - 1) {
-                System.out.print(res[i]);
-            } else {
-                System.out.print(res[i] + " ");
-            }
-        }
+        _print(res);
     }
 
     public static int[] checkPrime(int[] arr) {
@@ -29,5 +23,15 @@ public class CheckPrime {
           }
       }
       return rtn;
+    }
+
+    public static void _print(int[] res) {
+        for(int i=0; i<res.length; i++) {
+            if(i == res.length - 1) {
+                System.out.print(res[i]);
+            } else {
+                System.out.print(res[i] + " ");
+            }
+        }
     }
 }
