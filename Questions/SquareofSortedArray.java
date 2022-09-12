@@ -1,3 +1,4 @@
+// https://www.geeksforgeeks.org/the-stock-span-problem/
 public class SquareofSortedArray {
 
     public static void main(String[] args) {
@@ -7,6 +8,23 @@ public class SquareofSortedArray {
     }
 
     public static int[] square(int[] nums) {
+        int n = nums.length;
+        int right = n-1;
+        int left = 0;
+        int[] _return = new int[n];
+        for(int x=n-1;x>=0; x--) {
+            if(Math.abs(nums[left]) > Math.abs(nums[right])) {
+                _return[x] = Math.abs(nums[left])*Math.abs(nums[left]);
+                left++;
+            } else {
+                _return[x] = Math.abs(nums[right])*Math.abs(nums[right]);
+                right--;
+            }
+        }
+        return _return;
+    }
+
+    public static int[] squareWithOutSpace(int[] nums) {
         int n = nums.length;
         int right = n-1;
         int left = 0;
